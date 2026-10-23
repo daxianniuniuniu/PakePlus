@@ -24,3 +24,11 @@ window.open = function (url, target, features) {
 }
 
 document.addEventListener('click', hookClick, { capture: true })
+
+// ===== 上方：PakePlus 默认脚本，一行没动 =====
+hookClick（_blank 跳转拦截） + window.open 覆写 + click 监听
+
+// ===== 下方：追加的桌面端标识注入（新增）=====
+window.__APP_ENV__ = 'desktop';
+window.isPakePlus = true;
+window.isTauri = true;
